@@ -206,15 +206,53 @@ body::-webkit-scrollbar-track{
 
 /* Responsive code */
 
-@media screen and (max-width: 600px){
+/* --- Optimized Responsive Code --- */
+
+@media screen and (max-width: 1024px) {
+    .recipe-details {
+        width: 70%; /* Wider popup for tablets */
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 640px) {
     header nav {
         flex-direction: column;
+        gap: 15px;
+    }
+
+    header nav h1 {
+        font-size: 22px;
     }
 
     header nav form {
-        width: 80%;
-        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
     }
 
-}
+    .searchBox {
+        width: 70%; /* Ensures input doesn't squash */
+    }
 
+    /* Adjusting the Recipe Popup for Mobile */
+    .recipe-details {
+        width: 95%; /* Almost full width */
+        height: 90%;
+        font-size: 16px; /* Slightly smaller text for small screens */
+    }
+
+    .recipe-detail-content {
+        padding: 20px;
+        padding-top: 50px; /* Space for the close button */
+    }
+
+    .recipe-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        width: 95%;
+        grid-gap: 20px;
+    }
+
+    .recipe img {
+        height: 200px; /* Smaller images on mobile to save scroll space */
+    }
+}
